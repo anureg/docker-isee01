@@ -5,6 +5,3 @@ services:
       container_name: php-7.0-apache
       volumes:
         - ./src:/var/www/html
-      environment:
-        - VIRTUAL_HOST_WEIGHT=1
-        - VIRTUAL_HOST=*
