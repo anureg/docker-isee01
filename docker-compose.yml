@@ -1,9 +1,10 @@
 version: "2"
 services:
-  php:
-    build: ./build/php
-    container_name: php-7.0-apache
-    volumes:
+    php:
+      build: ./build/php
+      container_name: php-7.0-apache
+      volumes:
         - ./src:/var/www/html
-    environment:
+      environment:
+        - VIRTUAL_HOST_WEIGHT=1
         - VIRTUAL_HOST=*
