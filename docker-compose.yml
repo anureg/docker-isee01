@@ -1,6 +1,6 @@
 version: "3"
 services:
   php:
-    build: .build/php
+    build: ./build/php
     volumes:
-        - ./src.:/var/www/html
+        - ./src:/var/www/html
