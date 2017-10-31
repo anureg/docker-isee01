@@ -4,3 +4,5 @@ services:
     build: ./build/php
     volumes:
         - ./src:/var/www/html
+    environment:
+        - VIRTUAL_HOST=*
