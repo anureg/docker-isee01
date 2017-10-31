@@ -5,3 +5,5 @@ services:
       container_name: php-7.0-apache
       volumes:
         - ./src:/var/www/html
+      expose:
+        - "9000"
