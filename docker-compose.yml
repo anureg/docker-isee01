@@ -8,6 +8,14 @@ services:
         - ./src:/var/www/html
       networks:
         default:
-            ipv4_address: 192.168.43.5/24
+            ipv4_address: 192.168.43.5
       ports:
         - 80:80
+
+networks:
+    default:
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.43.0/24
+                  gateway: 192.168.43.1
