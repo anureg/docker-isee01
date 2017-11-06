@@ -6,16 +6,15 @@ services:
       container_name: php-7.0-apache
       volumes:
         - ./src:/var/www/html
-      networks:
-        default:
-            ipv4_address: 192.168.43.5
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.2
       ports:
         - 80:80
 
 networks:
-    default:
-        ipam:
-            driver: default
-            config:
-                - subnet: 192.168.43.0/24
-                  gateway: 192.168.43.1
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          ip_range: 172.28.5.0/24
