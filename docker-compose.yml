@@ -11,11 +11,4 @@ services:
         - 80:80 
     networks:
       mynetwork:
-        ipv4_address: 10.5.0.5
-networks:
-  mynetwork:
-    ipam:
-      driver: default
-      config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
+        ipv4_address: 192.168.43.10
