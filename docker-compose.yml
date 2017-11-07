@@ -10,10 +10,10 @@ services:
       ports:
         - 80:80
       networks:
-      static-network:
-        ipv4_address: 172.20.128.2
+        isee01_default:
+            ipv4_address: 172.20.128.2
 networks:
-  static-network:
+  isee01_default:
     ipam:
       config:
         - subnet: 172.20.0.0/16
