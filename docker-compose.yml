@@ -9,14 +9,14 @@ services:
         - ./src:/var/www/html
       ports:
         - 80:80 
-      networks:
-        mynetwork:
-            ipv4_address: 192.168.43.10     
+#      networks:
+#        mynetwork:
+#            ipv4_address: 192.168.43.10     
             
-networks:
-    mynetwork:
-        driver: bridge
-        ipam:
-            config:
-                - subnet: 192.168.43.0/24
-                  gateway: 192.168.43.1
+#networks:
+#    mynetwork:
+#        driver: bridge
+#        ipam:
+#            config:
+#                - subnet: 192.168.43.0/24
+#                  gateway: 192.168.43.1
