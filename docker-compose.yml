@@ -12,7 +12,10 @@ services:
 #      networks:
 #        mynetwork:
 #            ipv4_address: 192.168.43.10     
-            
+
+
+networks:
+    default:
 #networks:
 #    mynetwork:
 #        driver: bridge
