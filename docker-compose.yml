@@ -7,17 +7,19 @@ services:
       container_name: php-7.0-apache
       volumes:
         - ./src:/var/www/html
-      networks:
-        - test
       ports:
-        - 80:80       
+        - 80:80 
+      networks:
+        - mynetwork
+            aliases:
+                - isee.com
 networks:
-  test:
+  mynetwork:
     driver: bridge
     ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
-         aux_addresses:
-            php: 10.5.0.5 
-            #mysql: 10.5.0.5
+        config:
+            - subnet: 10.5.0.0/16
+              gateway: 10.5.0.1
+              aux_addresses:
+                php: 10.5.0.5 
+                #mysql: 10.5.0.5
