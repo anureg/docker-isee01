@@ -9,15 +9,15 @@ services:
         - ./src:/var/www/html
       ports:
         - 80:80 
-      networks:
-        - mynetwork
+    networks:
+      mynetwork:
+        ipv4_address: 10.5.0.5
+        
+        
 networks:
   mynetwork:
     driver: bridge
     ipam:
-        config:
-            - subnet: 10.5.0.0/16
-              gateway: 10.5.0.1
-              aux_addresses:
-                php: 10.5.0.5 
-                #mysql: 10.5.0.5
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
