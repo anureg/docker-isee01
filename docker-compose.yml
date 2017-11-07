@@ -10,5 +10,4 @@ services:
       ports:
         - 80:80 
     networks:
-      mynetwork:
         ipv4_address: 192.168.43.10
