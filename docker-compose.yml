@@ -1,4 +1,4 @@
-version: "3.2"
+version: "2.1"
 
 services:
     # web server
@@ -13,5 +13,9 @@ services:
       ports:
         - 80:80       
 networks:
-  MyNetwork:
-    external: true
+  my_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.43.0/24
+          gateway: 192.168.43.1
