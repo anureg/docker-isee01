@@ -14,7 +14,4 @@ services:
             ipv4_address: 192.168.43.10
 networks:
   MyNetwork:
-    ipam:
-      config:
-        - subnet: 192.168.43.0/24
-          ip_range: 192.168.43.0/24  
+    external: true
