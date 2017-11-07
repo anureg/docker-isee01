@@ -10,11 +10,11 @@ services:
       ports:
         - 80:80
       networks:
-        isee01_default:
-            ipv4_address: 172.20.128.2
+        MyNetwork:
+            ipv4_address: 192.168.43.10
 networks:
-  isee01_default:
+  MyNetwork:
     ipam:
       config:
-        - subnet: 172.20.0.0/16
-          ip_range: 172.28.5.0/24  
+        - subnet: 192.168.43.0/24
+          ip_range: 192.168.43.0/24  
