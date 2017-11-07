@@ -10,15 +10,9 @@ services:
       ports:
         - 80:80 
       networks:
-        vpcbr:
-            ipv4_address: 10.5.0.6
-      environment:
-        - SERVERNAME=example.local      
+        mynetwork:
+            ipv4_address: 10.5.0.6     
             
 networks:
-  vpcbr:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
+    mynetwork:
+        external: true
