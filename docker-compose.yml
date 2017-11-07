@@ -1,4 +1,4 @@
-version: "2"
+version: "3.2"
 
 services:
     # web server
@@ -7,11 +7,11 @@ services:
       container_name: php-7.0-apache
       volumes:
         - ./src:/var/www/html
-      ports:
-        - 80:80
       networks:
         MyNetwork:
             ipv4_address: 192.168.43.10
+      ports:
+        - 80:80       
 networks:
   MyNetwork:
     external: true
