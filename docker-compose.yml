@@ -8,18 +8,23 @@ services:
       volumes:
         - ./src:/var/www/html
       ports:
-        - 80:80 
-#      networks:
-#        mynetwork:
-#            ipv4_address: 192.168.43.10     
+        - 80:80
+    # MySQL
+    mysql:
+      image: mysql:5.7
+      container_name: mysql
+      volumes:
+        #- ./build/mysql:/docker-entrypoint-initdb.d
+        - ./tmp/mysql:/var/lib/mysql
+      environment:
+        #- MYSQL_DATABASE=world
+        - MYSQL_ROOT_PASSWORD=password
 
-
-networks:
-    default:
-#networks:
-#    mynetwork:
-#        driver: bridge
-#        ipam:
-#            config:
-#                - subnet: 192.168.43.0/24
-#                  gateway: 192.168.43.1
+    # phpMyAdmin
+    pma:
+      image: phpmyadmin/phpmyadmin
+      container_name: phpmyadmin
+      links:
+        - mysql:db
+      ports:
+        - 8080:80
