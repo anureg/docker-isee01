@@ -14,10 +14,10 @@ services:
       image: mysql:5.7
       container_name: mysql
       volumes:
-        #- ./build/mysql:/docker-entrypoint-initdb.d
+        - ./build/mysql:/docker-entrypoint-initdb.d
         - ./tmp/mysql:/var/lib/mysql
       environment:
-        #- MYSQL_DATABASE=world
+        - MYSQL_DATABASE=isee01
         - MYSQL_ROOT_PASSWORD=password
 
     # phpMyAdmin
